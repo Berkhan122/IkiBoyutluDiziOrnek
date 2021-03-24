@@ -12,7 +12,7 @@ namespace IkiBoyutluDiziOrnek
         {
             Console.Write("Öğrenci sayısı giriniz:");
             byte satir = byte.Parse(Console.ReadLine());
-            String[,] ogrenciler = new string[satir+1, 6];
+            String[,] ogrenciler = new string[satir + 1, 6];
             ogrenciler[0, 0] = "Ad";
             ogrenciler[0, 1] = "Soyad";
             ogrenciler[0, 2] = "Vize Notu";
@@ -58,7 +58,8 @@ namespace IkiBoyutluDiziOrnek
                     }
                     ogrenciler[i, j] = Console.ReadLine();
                 }
-        }
+
+            }
 
             for (int i = 0; i < ogrenciler.GetLength(0); i++)
             {
@@ -71,12 +72,23 @@ namespace IkiBoyutluDiziOrnek
             Console.ReadKey();
 
         }
-
+        /// <summary>
+        /// /Öğrenci Ortalamasını Vize notunun %40'ını, Final notunun %60'ını hesaplayarak döndüren metod.
+        /// </summary>
+        /// <param name="vize40"></param>
+        /// <param name="final60"></param>
+        /// <returns></returns>
         static int OgrOrt(byte vize40, byte final60)
         {
             int ortalama = vize40 * 40 / 100 + final60 * 60 / 100;
             return ortalama;
         }
+
+        /// <summary>
+        /// Hesaplanan öğrenci ortalaması ile Harf Notu ve 4.00'lük sistemde karşılıklarını döndüren metod.
+        /// </summary>
+        /// <param name="ort"></param>
+        /// <returns></returns>
         static string HarfNotu(int ort)
         {
             if (ort == 100 || ort >= 90)
